@@ -1974,9 +1974,18 @@ THREE.Raycaster.prototype.pickingRaySHIM = function( x,y, camera ) { //////////h
 	};
 	
 	var intersectObject = function ( object, raycaster, intersects, recursive ) {
-
+		var currentObject = object;
 		object.raycast( raycaster, intersects );
-
+///more of that peo's ai slop
+// After raycast, add UV coordinates to intersections if they exist
+		for ( var i = 0; i < intersects.length; i++ ) {
+			var intersection = intersects[i];
+			if ( intersection.object === currentObject && intersection.face && !intersection.uv ) {
+				// Calculate UV coordinates from barycentric coordinates and face UVs
+				calculateUV( intersection, currentObject );
+			}
+		}
+/// less of it
 		if ( recursive === true ) {
 
 			var children = object.children;
@@ -1990,7 +1999,55 @@ THREE.Raycaster.prototype.pickingRaySHIM = function( x,y, camera ) { //////////h
 		}
 
 	};
+/// and a little more peo's ai slop bloat
 
+// SIMPLER VERSION - More reliable for your use case
+var calculateUV = function ( intersection, object ) {
+    var face = intersection.face;
+    var geometry = object.geometry;
+    
+    if ( geometry.faceVertexUvs && geometry.faceVertexUvs[0] && geometry.faceVertexUvs[0][face.a] ) {
+        var uvs = geometry.faceVertexUvs[0];
+        var faceUVs = uvs[face.a];
+        
+        // Get face vertices
+        var vA = geometry.vertices[face.a];
+        var vB = geometry.vertices[face.b]; 
+        var vC = geometry.vertices[face.c];
+        
+        // Convert to world coordinates
+        var worldMatrix = object.matrixWorld;
+        var worldA = vA.clone().applyMatrix4(worldMatrix);
+        var worldB = vB.clone().applyMatrix4(worldMatrix);
+        var worldC = vC.clone().applyMatrix4(worldMatrix);
+        
+        // Calculate areas for barycentric coordinates
+        var areaABC = triangleArea(worldA, worldB, worldC);
+        var areaPBC = triangleArea(intersection.point, worldB, worldC);
+        var areaPCA = triangleArea(intersection.point, worldC, worldA);
+        
+        var u = areaPBC / areaABC;
+        var v = areaPCA / areaABC;
+        var w = 1.0 - u - v;
+        
+        // Interpolate UVs
+        var uv = new THREE.Vector2();
+        uv.x = u * faceUVs[0].x + v * faceUVs[1].x + w * faceUVs[2].x;
+        uv.y = u * faceUVs[0].y + v * faceUVs[1].y + w * faceUVs[2].y;
+        
+        intersection.uv = uv;
+    }
+};
+
+// Helper function to calculate triangle area
+var triangleArea = function ( a, b, c ) {
+    var ab = new THREE.Vector3().subVectors( b, a );
+    var ac = new THREE.Vector3().subVectors( c, a );
+    var cross = new THREE.Vector3().crossVectors( ab, ac );
+    return 0.5 * cross.length();
+};
+
+/// section end
 THREE.Raycaster.prototype.intersectObjectsPASS = function ( objects, recursive , intersects ) {
 
 			intersects.length = 0;
