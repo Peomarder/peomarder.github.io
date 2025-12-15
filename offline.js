@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1765349087,
+	"version": 1765789733,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -15,6 +15,15 @@
 		"bat_chenemybase-sheet0.png",
 		"bat_chenemybase-sheet1.png",
 		"sys_vector-sheet0.png",
+		"r_sticker-sheet0.png",
+		"r_rotate-sheet0.png",
+		"sprite2-sheet0.png",
+		"r_bg-sheet0.png",
+		"r_ui_btn-sheet0.png",
+		"spritefont.png",
+		"rz_anchor-sheet0.png",
+		"rz_anchor-sheet1.png",
+		"z_unseenpatch.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
