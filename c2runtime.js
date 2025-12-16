@@ -30337,6 +30337,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.rex_TouchWrap.prototype.cnds.OnDoubleTapGestureObject,
 	cr.plugins_.Sprite.prototype.exps.IID,
 	cr.plugins_.Text.prototype.acts.SetText,
+	cr.system_object.prototype.exps.ceil,
 	cr.plugins_.Function.prototype.cnds.OnFunction,
 	cr.system_object.prototype.cnds.CompareVar,
 	cr.plugins_.wastrel_switchcase.prototype.cnds.Switch,
