@@ -22252,7 +22252,7 @@ cr.plugins_.Quazi3D = function(runtime)
 		Q3Dref.idPicked = 0;
 		Q3Dref.viewportsEnabled = false;
 		Q3Dref.Rmode = this.properties[2];
-		Q3Dref.Smode = this.properties[3];
+		Q3Dref.Smode = this.properties[3]; //autofit
 		Q3Dref.RESmode = this.properties[14];
 		if(Q3Dref.Rmode === 0 || Q3Dref.Rmode === 2){
 		Q3Dref.MainDiv = this.runtime.canvas.parentNode;
@@ -30365,6 +30365,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetWidth,
 	cr.system_object.prototype.exps.distance,
 	cr.plugins_.rex_TouchWrap.prototype.cnds.OnNthTouchEnd,
+	cr.system_object.prototype.exps.layerindex,
 	cr.plugins_.Sprite.prototype.acts.SetVisible,
 	cr.system_object.prototype.cnds.PickAll,
 	cr.plugins_.Sprite.prototype.cnds.IsOverlapping,
