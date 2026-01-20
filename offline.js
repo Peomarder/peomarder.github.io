@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1768068585,
+	"version": 1768898374,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -10,7 +10,6 @@
 		"sys_touchbox-sheet0.png",
 		"gridblock-sheet0.png",
 		"q3d_tile-sheet0.png",
-		"q3d_tile-sheet1.png",
 		"bat_chfriendbase-sheet0.png",
 		"bat_chfriendbase-sheet1.png",
 		"bat_chenemybase-sheet0.png",
@@ -30,6 +29,8 @@
 		"c_star-sheet0.png",
 		"c_trail1-sheet0.png",
 		"c_trail1-sheet1.png",
+		"sut_progress-sheet0.png",
+		"tiledbackground.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
