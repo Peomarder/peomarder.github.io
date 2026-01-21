@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1768918361,
+	"version": 1769009930,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -31,6 +31,7 @@
 		"c_trail1-sheet1.png",
 		"sut_progress-sheet0.png",
 		"tiledbackground.png",
+		"xp_redcircle.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
