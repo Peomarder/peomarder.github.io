@@ -31782,9 +31782,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.rex_TouchWrap.prototype.cnds.OnTouchReleasedObject,
 	cr.system_object.prototype.cnds.LayerVisible,
 	cr.system_object.prototype.acts.GoToLayoutByName,
-	cr.plugins_.Rex_InstanceBank2.prototype.acts.SaveInstances,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
-	cr.plugins_.Rex_InstanceBank2.prototype.acts.LoadInstances,
 	cr.system_object.prototype.acts.CreateObject,
 	cr.plugins_.Sprite.prototype.acts.MoveToTop,
 	cr.plugins_.rex_TouchWrap.prototype.cnds.OnTouchEnd,
@@ -31804,6 +31802,7 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.cos,
 	cr.plugins_.Sprite.prototype.exps.Angle,
 	cr.plugins_.rex_TouchWrap.prototype.cnds.IsTouchingObject,
+	cr.plugins_.Rex_InstanceBank2.prototype.acts.LoadInstances,
 	cr.plugins_.Text.prototype.exps.Text,
 	cr.plugins_.Browser.prototype.acts.RequestFullScreen,
 	cr.system_object.prototype.exps.ceil,
@@ -31811,5 +31810,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.NinePatch.prototype.exps.Width,
 	cr.plugins_.NinePatch.prototype.exps.X,
 	cr.plugins_.NinePatch.prototype.exps.Height,
-	cr.plugins_.NinePatch.prototype.exps.Y
+	cr.plugins_.NinePatch.prototype.exps.Y,
+	cr.plugins_.rex_TouchWrap.prototype.cnds.OnTouchStart
 ];};
